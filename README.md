@@ -41,4 +41,4 @@ For other UI library using Unity3D dynamic font (like NGUI), you can do it by th
 
 ## Under the hood
 
-If you want to know more detail about this libary, check [UnderTheHood](./docs/UnderTheHood) article.
+If you want to know more detail about this libary, check [UnderTheHood](./docs/UnderTheHood.md) article.
