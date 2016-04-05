@@ -1,48 +1,23 @@
 ﻿#I @"packages/FAKE/tools"
+#I @"packages/FAKE.BuildLib/lib/net451"
 #r "FakeLib.dll"
+#r "BuildLib.dll"
 
 open Fake
-open Fake.FileHelper
-open System.IO
+open BuildLib
 
-// ---------------------------------------------------------------------------- Variables
+let solution = initSolution "" "" []
 
-let binDir = "bin"
+Target "Clean" <| fun _ -> cleanBin
 
-// ------------------------------------------------------------------------- Unity Helper
+Target "Package" <| fun _ -> buildUnityPackage "./src/UnityPackage"
 
-let UnityPath = 
-    @"C:\Program Files\Unity\Editor\Unity.exe" 
+Target "Help" <| fun _ -> 
+    showUsage solution (fun name -> 
+        if name = "package" then Some("Build package", "")
+        else None)
 
-let Unity projectPath args = 
-    let result = Shell.Exec(UnityPath, "-quit -batchmode -logFile -projectPath \"" + projectPath + "\" " + args) 
-    if result < 0 then failwithf "Unity exited with error %d" result 
-
-// ------------------------------------------------------------------------------ Targets
-
-Target "Clean" (fun _ -> 
-    CleanDirs [binDir]
-)
-
-Target "Package" (fun _ ->
-    Unity (Path.GetFullPath "src/UnityPackage") "-executeMethod PackageBuilder.BuildPackage"
-    (!! "src/UnityPackage/*.unitypackage") |> Seq.iter (fun p -> MoveFile binDir p)
-)
-
-Target "Help" (fun _ ->  
-    List.iter printfn [
-      "usage:"
-      "build [target]"
-      ""
-      " Targets for building:"
-      " * Package      Build UnityPackage"
-      ""]
-)
-
-// --------------------------------------------------------------------------- Dependency
-
-// Build order
 "Clean"
   ==> "Package"
 
-RunTargetOrDefault "Package"
+RunTargetOrDefault "Help"
