@@ -115,8 +115,7 @@ public static class ThaiFontAdjuster
 
     private static bool IsBase(char c)
     {
-        return c >= '\x0E01' && c <= '\x0E2F' ||
-               c == '\x0E30' || c == '\x0E40' || c == '\x0E41';
+        return (c >= '\x0E01' && c <= '\x0E2F') || c == '\x0E30' || c == '\x0E40' || c == '\x0E41';
     }
 
     private static bool IsBaseDesc(char c)
