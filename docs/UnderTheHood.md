@@ -71,11 +71,11 @@ extended glyphs which meets C90 encoding.
 For example [Garuda](http://www.nectec.or.th/pub/review-software/font/national-fonts.html)
 font has Thai glyphs
 
-![ThaiFont](https://raw.githubusercontent.com/SaladbowlCreative/Unity3D.ThaiFontAdjuster/master/docs/Font.png)
+![ThaiFont](https://raw.githubusercontent.com/SaladLab/Unity3D.ThaiFontAdjuster/master/docs/Font.png)
 
 In addition this standard glyphs, extended glyphs are included.
 
-![ThaiFontExtended](https://raw.githubusercontent.com/SaladbowlCreative/Unity3D.ThaiFontAdjuster/master/docs/FontExtended.png)
+![ThaiFontExtended](https://raw.githubusercontent.com/SaladLab/Unity3D.ThaiFontAdjuster/master/docs/FontExtended.png)
 
 Extended glyphs consist of:
 

@@ -8,11 +8,11 @@ This library gives workaround to render Thai font almost correctly.
 Following image shows differences between results from original Unity3D and this library.
 Position of tone mark, upper vowel and lower vowel would be adjusted by surrounding characters.
 
-![Features](https://raw.githubusercontent.com/SaladbowlCreative/Unity3D.ThaiFontAdjuster/master/docs/Features.png)
+![Features](https://raw.githubusercontent.com/SaladLab/Unity3D.ThaiFontAdjuster/master/docs/Features.png)
 
 ## Where can I get it?
 
-Visit [Release](https://github.com/SaladbowlCreative/Unity3D.ThaiFontAdjuster/releases)
+Visit [Release](https://github.com/SaladLab/Unity3D.ThaiFontAdjuster/releases)
 page to get latest ThaiFontAdjuster unity-package.
 
 ## How to use
