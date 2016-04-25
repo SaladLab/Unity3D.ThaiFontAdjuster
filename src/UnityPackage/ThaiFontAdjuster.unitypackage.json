@@ -1,0 +1,12 @@
+{
+  "id": "ThaiFontAdjuster",
+  "version": "1.0.0",
+  "authors": [ "Esun Kim" ],
+  "owners": [ "Esun Kim" ],
+  "description": "Utility to render Thai text correctly in Unity3D, especially for positioning tone mark.",
+  "files": [
+    "Assets/ThaiFontAdjuster/*",
+    { "source": "Assets/ThaiFontAdjusterDemo/*", "target": "$homebase$/ThaiFontAdjusterDemo/", "extra": true },
+    "$dependencies$"
+  ]
+}

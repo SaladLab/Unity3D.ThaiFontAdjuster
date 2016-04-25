@@ -10,14 +10,16 @@ let solution = initSolution "" "" []
 
 Target "Clean" <| fun _ -> cleanBin
 
-Target "Package" <| fun _ -> buildUnityPackage "./src/UnityPackage"
+Target "PackUnity" <| fun _ ->
+    packUnityPackage "./src/UnityPackage/ThaiFontAdjuster.unitypackage.json"
+
+Target "Pack" <| fun _ -> ()
 
 Target "Help" <| fun _ -> 
-    showUsage solution (fun name -> 
-        if name = "package" then Some("Build package", "")
-        else None)
+    showUsage solution (fun _ -> None)
 
 "Clean"
-  ==> "Package"
+  ==> "PackUnity"
+  ==> "Pack"
 
 RunTargetOrDefault "Help"
